@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Import Routes
 import SignupForm from "./components/SignUp/index.jsx";
 import LoginForm from "./components/logIn/index.jsx";
@@ -11,6 +11,11 @@ const App = () => {
   const handleLogin = () => {
     setIsLoggedIn(true);
   };
+  useEffect(()=>{
+    if(localStorage.getItem("userData")){
+      setIsLoggedIn(true);
+    }
+  },[])
 
   return (
     <Router>

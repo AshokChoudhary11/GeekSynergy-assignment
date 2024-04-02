@@ -10,22 +10,24 @@ const Navbar = () => {
 
   useEffect(() => {
     const storedUserData = localStorage.getItem("userData");
-    // if (storedUserData) {
-    //   setIsLoggedIn(true);
-    //   setUserData(JSON.parse(storedUserData));
-    // }
+    if (storedUserData) {
+      setIsLoggedIn(true);
+      //   setUserData(JSON.parse(storedUserData));
+    }
   }, [isLoggedIn]);
   const renderNavLinks = () => {
     if (isLoggedIn) {
       return (
         <>
           <div className={`nav-elements  ${showNavbar && "active"}`}>
-            <li>
-              <NavLink to="/dashboard">Dashboard</NavLink>
-            </li>
-            <li>
-              <NavLink to="/company-info">Company Info</NavLink>
-            </li>
+            <ul>
+              <li>
+                <NavLink to="/dashboard">Dashboard</NavLink>
+              </li>
+              <li>
+                <NavLink to="/company-info">Company Info</NavLink>
+              </li>
+            </ul>
             {/* <div className="profile">{userData.name && userData.name.charAt(0).toUpperCase()}</div> */}
           </div>
         </>
