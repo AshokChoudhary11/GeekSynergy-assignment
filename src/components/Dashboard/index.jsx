@@ -3,6 +3,8 @@ import "./index.css";
 import axios from "axios";
 import Movie from "../movie";
 
+
+const BACKEND_URL = process.env.NODE_ENV === "production" ? "":"https://hoblist.com/"
 const Dashboard = () => {
   const [movies, setMovies] = useState([]);
   console.log(movies);
@@ -10,7 +12,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post("https://hoblist.com/api/movieList", {
+        const response = await axios.post(`${BACKEND_URL}api/movieList`, {
           category: "movies",
           language: "kannada",
           genre: "all",
