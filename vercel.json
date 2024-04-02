@@ -1,8 +1,8 @@
 {
     "rewrites": [
       {
-        "source": "/api",
-        "destination": "https://hoblist.com/api"
+        "source": "/api/:match*",
+        "destination": "https://hoblist.com/api/:match*"
       }
     ]
   }
