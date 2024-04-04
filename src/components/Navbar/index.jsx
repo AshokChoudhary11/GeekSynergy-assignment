@@ -14,7 +14,7 @@ const Navbar = () => {
       setIsLoggedIn(true);
       //   setUserData(JSON.parse(storedUserData));
     }
-  }, [isLoggedIn]);
+  },);
   const renderNavLinks = () => {
     if (isLoggedIn) {
       return (
